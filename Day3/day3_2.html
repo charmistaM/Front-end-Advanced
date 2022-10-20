@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <html>
+	<head></head>
+	<body>
+		<h3>Register now!!</h3>
+		<hr/>
+		
+		 
+		<form  action="login.php"   method="get"   onsubmit="fn_submitData()">
+			
+				Customer Name  :  <input type="text"  id="cname" name="cname"  onblur="fn_cursorLeave()"   autofocus  />    
+				<span id="sp1" style="color:red;"></span><br/><br/>
+				Source Station  :  <input type="text"  id="sourcestat" name="sourcestat"  />      <br/><br/>
+				Destination Station  :  <input type="text"  id="deststat" name="deststat"  />      <br/><br/>
+		        Contact Number : <input type="number" id="contactnum" name="contactnum" onmouseleave="fn_number()" />         <br/><br/>
+                <span id="sp2" style="color:red;"></span><br/><br/>
+			  <input  type="submit"  value="Register"  />		
+		</form>
+		
+ 
+	 
+		
+		<script> 	 
+			  function fn_submitData()
+			  {
+					var sourcestation  =  document.getElementById("sourcestat").value;
+					var destinationstation  =  document.getElementById("deststat").value;
+					
+					if(sourcestation != destinationstation)
+					{
+					}
+					else
+					{
+						alert("Source station and destination station should not be same");
+						event.preventDefault();
+					}
+			  } 
+			  
+			  
+			 function  fn_cursorLeave()
+			 {
+					var cname  =  document.getElementById("cname").value;
+					
+					if(cname ==  "")
+					{
+							 //alert("User Id is required");
+							 document.getElementById("sp1").innerHTML =  "Customer name is required";
+							 document.getElementById("cname").focus();
+					}
+					else
+					{
+						document.getElementById("sp1").innerHTML =  "";
+					}
+				 
+			 }
+
+             function fn_number(){
+                var contactnum= document.getElementById("contactnum").value;
+
+                if(contactnum.length!=10){
+                    document.getElementById("sp2").innerHTML =  " Correct Contact number is required";
+					document.getElementById("contactnum").focus();
+                }
+                else{
+                    document.getElementById("sp2").innerHTML =  "";
+                }
+             }
+			  
+		</script>
+		
+	 
+		
+	</body>
+</html>
+</body>
+</html>
