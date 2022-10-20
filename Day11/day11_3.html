@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Ajax</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        #table1{
+            margin-left: 320px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Read and write operations on Employee data</h1>
+    <hr/>
+    <form>
+        Employee Number  :  <input type="text"  id="t1" />  
+        <br/><br/>
+        Employee Name    :  <input type="text"  id="t2" />  
+        <br/><br/>
+        Job              :  <select id="t3">
+                                <option>Director</option>
+                                <option>Manager</option>
+                                <option>CEO</option>
+                                <option>Accountant</option>
+                            </select>
+        <br/><br/>
+        Department Number:  <input type="text"  id="t4" />  
+        <br/><br/>
+    </form>
+    <input type="button" id="btn1" value="Save data"/>
+    <input type="button" id="btn2" value="Get data"/><br/><br/>
+    <table id="table1"  Border="1"  cellpadding="5"  cellspacing="0"  width="600">
+        <tr>
+			<th>Employee Number</th>
+			<th>Employee Name</th>
+			<th>Job</th>
+            <th>Department Number</th>
+		</tr>
+    </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){		
+	
+                var  newEmpObj = {};
+                newEmpObj.empno  =   $("#t1").val();
+                newEmpObj.ename  =   $("#t2").val();
+                newEmpObj.job  =   $("#t3").val();
+                newEmpObj.deptno = $("#t4").val();
+
+            $.ajax(
+                {
+                    url : " http://localhost:3000/empdata",
+                    type: "POST",
+                    data :   newEmpObj,
+                    success :  function(response)
+                    {
+                        console.log(response);	
+                        alert("New Customer Details are saved in server");
+                    }		
+                });				 
+            });
+            $("#btn2").click(function(){
+                $.ajax(
+                    {
+                        url : " http://localhost:3000/empdata",
+                        type: "GET",
+                        success :  function(response)
+                        {
+                            console.log(response);	
+                            displayData(response );
+                        }
+                    });
+            });
+        });
+        $('#t4').keyup(function() {
+			 
+			 $(".error-t2").remove();						
+			 var inputVal = $(this).val();						
+			 var NumReg = /^([0-9])+?$/;
+					  
+				 if(  NumReg.test(inputVal)  ==  false && inputVal.length>0) 
+				 {
+					 $(this).after('<span style="color:red" class="error-t2">Enter Valid Number</span>');
+				 }
+			  
+        });
+        function   displayData(resData)
+        {
+        $("#table1   tr").not(":first").remove();
+
+                
+        for(let  item  of  resData)
+        {
+        let  str  = `<tr>  <td> ${item.empno} </td>  <td>${item.ename}</td>  <td>${item.job}</td><td>${item.deptno}</td>  </tr>`;				
+        $("#table1").append(str);
+
+        }
+
+
+            // $("#table1  tr:even").css("background-color",  "Pink");
+            // $("#table1  tr:odd").css("background-color",  "lightblue");
+
+            // $("#table1  tr:first").css("background-color",  "lightgreen");
+
+
+
+
+            }
+
+    </script>
+
+</body>
+</html>

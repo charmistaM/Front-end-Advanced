@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods</title>
+    <style>
+        td{
+            width: 300px;
+            padding: 25px;
+        }
+        table{
+            margin-left: 280px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Validations using String Methods</h1>
+    <hr/>
+    <input type="button" id="btn1" value="Get Data"/><br/><br/>
+    <table Border="2">
+        <tr>
+            <td>
+                Credit Card Number
+            </td>
+            <td id="td1"></td>
+        <tr>
+            <td>
+                Card Holder Name
+            </td>
+            <td id="td2"></td>
+        </tr>
+        <tr>
+            <td>
+                Card Type
+            </td>
+            <td id="td3"></td>
+        </tr>
+        <tr>
+            <td>
+                Expiry Date
+            </td>
+            <td id="td4"></td>
+        </tr>
+    </table>
+    <script  src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        let custObj={cardNumber: 1234456778997896, chName: "charmista maleedu", cardType: "Visa", expireMonth : 12, expireYear : 2023};
+        console.log(custObj);
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#td1").html("**** **** **** " + (String(custObj.cardNumber).slice(12)));
+                const words=custObj.chName.split(" ");
+                for(i=0;i<words.length;i++){
+                    words[i]=words[i][0].toUpperCase()+words[i].substr(1).toLowerCase();
+                }
+                $("#td2").html(words.join(" "));
+                $("#td3").html((String(custObj.cardType).toUpperCase()));
+                let mon=new Date();
+                mon.setMonth(custObj.expireMonth);
+                let a=mon.toLocaleDateString('en-US' , {month: "short"});
+                $("#td4").html(a + " "+ custObj.expireYear);
+            });
+        });
+    </script>
+</body>
+</html>
