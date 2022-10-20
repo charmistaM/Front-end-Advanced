@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traversal</title>
+</head>
+<body>
+    <h1 style="text-align:center">DOM Traversal using jQuery</h1>
+    <hr/>
+    <table id="table1" Border="4" width="500px" height="400px" style="margin-left:420px">
+        <tr>
+            <th>Product Name</th>
+            <th>Unit Price</th>
+            <th>Units In Stock</th>
+            <th>Quantity</th>
+        </tr>
+        <tr>
+            <td>Printer</td>
+            <td>2500.00</td>
+            <td>20</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>4GB-RAM</td>
+            <td>1200.00</td>
+            <td>23</td>
+            <td>0</td>
+        </tr>
+        <tr  >
+            <td>1TB Samsung HDD</td>
+            <td>4500.00</td>
+            <td>0</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>32-GB Kingston USB</td>
+            <td>800.00</td>
+            <td>35</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Wifi Router</td>
+            <td>1800.00</td>
+            <td>0</td>
+            <td>1</td>
+        </tr>  
+        <tr  >
+            <td>1TB Samsung HDD</td>
+            <td>4500.00</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>32-GB Kingston USB</td>
+            <td>800.00</td>
+            <td>35</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Wifi Router</td>
+            <td>1800.00</td>
+            <td>0</td>
+            <td>3</td>
+        </tr>  
+     </table> 
+     <script  src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+     <script>
+        $(document).ready(function(){
+           $("#table1 tr").each(function(){
+                if($(this).children().last().text()=="0"){
+                    $(this).css("background-color","pink");
+                }
+                else{
+                    $(this).css("background-color","lightgreen");
+                }
+           })
+            $("#table1 tr:first").css("background-color","yellow");
+            $("#table1 tr:last").css("background-color","skyblue");
+        });
+     </script>
+    
+</body>
+</html>

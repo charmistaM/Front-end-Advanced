@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Manipulations</title>
+</head>
+<body style="text-align: center";>
+    <h1 style="text-align:center">DOM Manipulations in jQuery</h1>
+    <hr/>
+    <input type="button"  id="b1" value="Append" />
+    <br/>
+    <br/>
+    <form  action="login.php"   method="get">
+        Product name: <input type="text"  id="pname" name="pname"/><br/><br/>
+        Unit Price: <input type="number"  id="uprice" name="uprice"/><br/><br/>
+        Units in Stock: <input type="number"  id="ustock" name="ustock"/><br/><br/>
+    </form>
+    <table  id="table1" Border="2" width="400px">
+ 
+        <tr>
+            <th>Product Name</th>
+            <th>Unit Price</th>
+            <th>Units In Stock</th>
+        </tr>
+        <tr>
+            <td>Printer</td>
+            <td>2500.00</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>4GB-RAM</td>
+            <td>1200.00</td>
+            <td>23</td>
+        </tr> 
+        <tr>
+            <td>1TB Samsung HDD</td>
+            <td>4500.00</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>32-GB Kingston USB</td>
+            <td>800.00</td>
+            <td>35</td>
+        </tr>  
+        </table>  
+        <script  src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#b1").click(function(){
+                    let  x  = 	$("#pname").val();
+                    let  y  = 	$("#uprice").val();
+                    let  k  =   $("#ustock").val();
+
+                    $("#table1").append("<tr><td>" + x + "</td>" + "<td>" + y + "</td>" + "<td>" + k + "</td>" +"</tr>");
+                });
+            });
+        </script>
+</body>
+</html>
