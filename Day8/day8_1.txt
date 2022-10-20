@@ -1,0 +1,10 @@
+1. What is the difference between this and $this in jQuery Programming??
+
+The this Keyword is a reference to DOM elements of invocation. We can call all DOM methods on it. $() is a jQuery constructor and in $(this), we are just passing this as a parameter so that we can use the jQuery function and methods.
+
+
+
+2. Why do we use $(document).ready() in jQuery???
+
+$( document ).ready()
+A page can't be manipulated safely until the document is "ready." jQuery detects this state of readiness for you. Code included inside $( document ).ready() will only run once the page Document Object Model (DOM) is ready for JavaScript code to execute.

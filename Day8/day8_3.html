@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Selection in jQuery</title>
+    <style>
+        .c1{
+            border: 1px solid gray;
+            height: 90px;
+            width: 100px;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 5px;
+        }
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; font-weight: bold;">Image Selection Using JQuery</h1><hr/>
+    <img class="c1" src="https://1.bp.blogspot.com/-Lq6BBDwV744/WpmGi_lM1RI/AAAAAAAAJQ8/o4s9oFnxyVIc1GioOmWhqnyE2ydadhKpQCLcBGAs/s1600/giraffe-running.jpg">
+    <img class="c1" src="https://www.treehugger.com/thmb/bMGTVoLbCjqcpd9q3YX8_XW9zZk=/2122x1412/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-185509882-12143e2d1e234440a5c602df9d072f61.jpg">
+    <img class="c1" src="https://www.denverpost.com/wp-content/uploads/2020/02/Rhino-Calf_5.jpg">
+    <img class="c1" src="https://th.bing.com/th/id/R.7dfce7f590441d474aa9002c9da3dc13?rik=AUoQ3IkBzYn69A&riu=http%3a%2f%2fcincinnatizoo.org%2fsystem%2fassets%2fuploads%2f2014%2f02%2fasian-elephant.jpg&ehk=%2fq4dCzmOjRLdrvEc83W%2ff5J%2bDij%2bB2SQ7LaMaIjwJss%3d&risl=&pid=ImgRaw&r=0">
+    <hr/>
+
+    <img src="https://1.bp.blogspot.com/-Lq6BBDwV744/WpmGi_lM1RI/AAAAAAAAJQ8/o4s9oFnxyVIc1GioOmWhqnyE2ydadhKpQCLcBGAs/s1600/giraffe-running.jpg" id="bigimg" Border="2" width="340" height="340">
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".c1").mouseover(function(){
+                $("#bigimg").attr('src',$(this).attr('src'));
+            });
+        });
+    </script>
+</body>
+</html>

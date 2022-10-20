@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+</head>
+<body>
+    <h1 style="text-align: center";>Using JQuery..!</h1>
+    <hr/>
+    <form  action="login.php"   method="get">
+		    Product Name: 
+            <select id="pname" name="pname" >
+                <option>Biryani</option>
+                <option>Noodles</option>
+                <option>Fried rice</option>
+                <option>Pizza</option>
+            </select>
+        <br/><br/>
+        Price  :  <input type="number"  id="price" name="price"/><br/><br/>
+        Quantity  :  <input type="number"  id="quantity" name="quantity"/><br/><br/>
+        Total Amount  :  <input type="number" readonly id="totamt" name="totamt"/><br/><br/>
+        <hr/>
+        <p id="p1" style="font-weight: bold; font-size: 30px;"></p>
+    <input type="button" onclick="fn_onclick()" value="Total Amount"/>
+    <script  src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        function fn_onclick(){
+                let  x  = 	$("#price").val();
+				let  y  = 	$("#quantity").val();
+                let  k  =   $("#pname").val();
+				let  z = parseInt(x) *  parseInt(y);
+				$("#totamt").val(z);		
+
+			    $("#p1").html(k + " with Price " + x +" of Quantity " + y + " will be of" + " Total Amount  : Rs "  +  z);
+        }
+    </script>
+</body>
+</html>
