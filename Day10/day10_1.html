@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling in jQuery</title>
+    <style>
+        .bstyle{
+            font-weight: bold;
+        }
+        .ustyle{
+            text-decoration: underline;
+        }
+        .istyle{
+            font-style: italic;
+        }
+        .nstyle{
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Styling in jQuery</h1>
+    <hr/>
+    <input type="button" value="B" id="btn1" />
+    <input type="button" value="U" id="btn2" />
+    <input type="button" value="I" id="btn3" />
+    <p class="p1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni mollitia error architecto illo dolore facere illum rerum nobis iste sapiente inventore praesentium voluptatem, tempora, totam fugiat ratione voluptatibus, ea vitae. Exercitationem architecto debitis, at temporibus aliquid consequatur officiis blanditiis sunt magni vel atque accusantium, esse impedit. Vero unde libero excepturi soluta nobis magnam eveniet esse veritatis laboriosam quidem omnis quis numquam, repellat cum quod ipsam nisi similique repellendus, et autem perferendis fuga sequi voluptates consectetur. Labore molestias provident placeat veniam velit sint expedita at illo ipsam ratione pariatur eos repellat officia magnam in, consectetur laudantium deleniti veritatis reiciendis! Provident esse blanditiis praesentium, ab voluptatum suscipit explicabo inventore sunt ut minus ipsam neque? Temporibus accusantium reprehenderit non a esse! Fugiat minus ipsam eius. Tempora, illo esse culpa cupiditate provident doloribus placeat officia laboriosam nesciunt? Officia, dolores doloribus quidem voluptas iusto optio accusantium, tempora numquam qui nostrum alias libero. Molestias tenetur excepturi itaque perspiciatis hic officiis, explicabo, eligendi impedit et quis sapiente voluptatum odit repellat. Atque suscipit vero quae magni fugit soluta reprehenderit, error voluptatum dicta exercitationem vitae deserunt officiis harum sit dolorem sint porro sequi fugiat voluptas, adipisci tempora est accusantium perspiciatis illo. Autem, nulla ex similique minus pariatur unde provident.
+    </p>
+    <script  src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(".p1").css({"border":"2px solid blue"});
+        $("#btn1").click(function(){
+            $(".p1").toggleClass("bstyle");
+            $("#btn1").toggleClass("nstyle");
+            
+        });
+        $("#btn2").click(function(){
+            $(".p1").toggleClass("ustyle");
+            $("#btn2").toggleClass("nstyle");
+
+        });
+        $("#btn3").click(function(){
+            $(".p1").toggleClass("istyle");
+            $("#btn3").toggleClass("nstyle");
+        });
+    </script>
+</body>
+</html>
