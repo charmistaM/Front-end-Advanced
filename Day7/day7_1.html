@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous JavaScript</title>
+</head>
+<body>
+    <h1>Working with Asynchronous JavaScript</h1>
+    <hr/>
+    <script>
+        const myPromise=new Promise((resolve,reject) => 
+        {
+                count=Math.floor(Math.random() * 51);
+                console.log(count);
+
+                if(count%5==0){
+                    resolve(count);
+                }
+                else{
+                    reject("Error message is displayed");
+                }
+
+        });
+
+        myPromise.then((response) =>
+        {
+            console.log(response);
+        })
+        .catch((errorResponse) =>
+        {
+            console.log(errorResponse);
+        });
+    </script>
+
+</body>
+</html>

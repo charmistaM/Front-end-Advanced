@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Using Async and Await..!</h1>
+    <hr/>
+    <form  action="login.php"   method="get">
+			
+        Empno  :  <input type="number"  id="empno" name="empno"/><br/><br/>
+    <input type="button" onclick="fn_onclick()" value="Get Data"/>
+    <script>
+
+        function fn_onclick(){
+            let url =  "https://dummy.restapiexample.com/api/v1/employee/2";
+			fetch(url).then(  (response)  => 
+			{ 
+                response.json().then ((result) =>  
+					{
+                        console.log(result); 
+						console.log(result.data[0]);
+
+                    });
+            });
+        }
+
+        async function  getData()
+			{ 
+					if(false)
+					{
+						return  Promise.resolve("Content that is prepared by promise"); 
+					}
+					else
+					{
+						return  Promise.reject ("Error Message from promise");
+					}
+			}
+
+        async function  fn_button1Click()
+        {
+                try 
+                {
+                var response =  await  getData(); 
+                console.log( response );
+                }
+                catch(error)
+                {
+                console.log(error);
+                }					
+        }
+        
+    </script>
+</body>
+</html>
