@@ -1,0 +1,35 @@
+1. HOW TO BIND SRC PROPERTY OF IMAGE TAG IN ANGULAR?
+Setting an element property to a component property valuelink. To bind the src property of an <img> element to a component's property, place src in square brackets followed by an equal sign and then the property. Declare the itemImageUrl property in the class, in this case AppComponent .
+
+Interpolation:
+<img src={{imagePath}} />
+
+Template expression:
+<img [src]="imagePath" />
+
+ngFor loop:
+<div *ngFor="let student of students">
+   <img src={{student.ImagePath}} />
+</div>
+
+
+2.HOW TO USE NUMBER AND PERCENTPIPE IN ANGULAR
+Number:
+DecimalPipe
+PIPE
+Formats a value according to digit options and locale rules. Locale determines group sizing and separator, decimal point character, and other locale-specific configurations.
+
+{{ value_expression | number [ : digitsInfo [ : locale ] ] }}
+
+Percentpipe: 
+Transforms a number to a percentage string, formatted according to locale rules that determine group sizing and separator, decimal-point character, and other locale-specific configurations.
+
+{{ value_expression | percent [ : digitsInfo [ : locale ] ] }}
+
+
+
+
+
+
+
+
