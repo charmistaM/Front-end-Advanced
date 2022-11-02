@@ -1,0 +1,17 @@
+<br/><br/>
+<fieldset [ngStyle]="{'background-color':'blue', 'color':'white','font-weight':'bold','text-align':'center'}">
+    <h1>Simple Interest Calculator</h1>
+    Principal Amount  :  <input [ngStyle]="{'width':'40px'}" [(ngModel)]="pamt"   />  
+    <br/><br/>
+    Rate % Per Year  :  <input [ngStyle]="{'width':'40px'}" [(ngModel)]="rate"   />  
+    <br/><br/>
+    Time Period(In Years)  :  <select [ngStyle]="{'width':'40px'}" [(ngModel)]="tperiod"   > 
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option> </select>
+    <br/><br/>
+    <input type="button" value="Calculate Interest" (click)="calculateinterest()" />
+    <h3> {{result}} </h3>
+</fieldset>

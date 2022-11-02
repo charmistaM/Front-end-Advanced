@@ -1,0 +1,13 @@
+<h1>Updating Login example</h1>
+<hr/>
+<fieldset>
+    <legend>Login data</legend>
+    User Id  :  <input  [(ngModel)]="uid"   />  
+    <br/><br/>
+    Password :  <input type="password" [(ngModel)]="pwd"   />  
+    <br/><br/>
+    <input type="button" value="Login" (click)="isValidUser()" />  
+    
+    <h3 [ngStyle]="{'color':getColor()}"> {{result}} </h3>
+
+</fieldset>

@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<h1>Products data</h1>
+<fieldset>
+    Id  :  <input [(ngModel)]="pid"   />  
+    <br/><br/>
+    Name  :  <input [(ngModel)]="name"   />  
+    <br/><br/>
+    Price  :  <input [(ngModel)]="price"   />  
+    <br/><br/>
+    Category  :  <input [(ngModel)]="cat"   />  
+    <br/><br/>
+    Quantity  :  <input [(ngModel)]="qty"   />  
+    <br/><br/>
+    <input type="button" value="Get Product" (click)="getproduct()"/>
+    <input type="button" value="Add Product" (click)="addproduct()" />
+    <input type="button" value="Update Product" (click)="updtproduct(pid)" />
+    <input type="button" value="Reset" (click)="resetproduct()"/><br/><br/>
+    <div [ngStyle]="{'background-color':'beige','float':'left','margin-left':'30px','width':'150px','text-align':'center','margin-top':'15px','font-weight':'bold'}" *ngFor="let item of proArray">
+        <p>Product Id: {{item.pid}}</p>
+        <p>Name      : {{item.name}}</p>
+        <p>Price     : {{item.price}}</p>
+        <p>Category  : {{item.cat}}</p>
+        <p>Qty       : {{item.qty}}</p>
+        <p><a [ngStyle]="{'color':'black'}" href="javascript:void(0);" (click)="selectproduct(item.pid)"><i class="bi bi-pencil-square"></i></a> |
+        <a [ngStyle]="{'color':'black'}" href="javascript:void(0);" (click)="deleteproduct(item.pid)"><i class="bi bi-trash3-fill"></i></a></p>
+    </div>
+
+</fieldset>
