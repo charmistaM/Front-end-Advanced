@@ -1,0 +1,10 @@
+<h3 text-align="center">Transforming Data using Pipes in Angular</h3>
+<hr/> 
+<input type="button"  value="Next Items >>"  (click)="nextItems()" /> <br/><br/>
+<div [ngStyle]="{'background-color':'beige','float':'left','margin-left':'30px','width':'150px','text-align':'center','margin-top':'15px','font-weight':'bold'}" *ngFor="let item of proArray | slice : start : end ">
+    <p>Product Id: {{item.pid}}</p>
+    <p>Name      : {{item.name}}</p>
+    <p>Price     : {{item.price}}</p>
+    <p>Category  : {{item.cat}}</p>
+    <p>Qty       : {{item.qty}}</p>
+</div>

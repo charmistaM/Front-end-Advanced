@@ -1,0 +1,16 @@
+<h3  text-align="center">Transforming Data using Pipes in Angular</h3><hr/>
+<h3>Custom Pipes in Angular</h3>
+<hr/>
+
+<table Border="2" width="400">
+    <tr>
+        <th>S.No</th>
+        <th>Employee Name</th>
+        <th>Performance Grades</th>
+    </tr>    
+    <tr *ngFor="let item of gradesArray">
+        <td>{{item.sno}}</td>
+        <td>{{item.ename }}</td>
+        <td>{{item.egrades | gradespipe}}</td>
+    </tr>
+</table>
