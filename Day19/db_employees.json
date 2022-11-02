@@ -1,0 +1,32 @@
+{
+  "employees": [
+    {
+      "eno": 6589,
+      "ename": "Sriram",
+      "job": "Manager",
+      "salary": 3200,
+      "deptno": "32"
+    },
+    {
+      "eno": 6369,
+      "ename": "Smith",
+      "job": "Clerk",
+      "salary": 800,
+      "deptno": "20"
+    },
+    {
+      "eno": 6499,
+      "ename": "Naveen",
+      "job": "Chennai",
+      "salary": 38334,
+      "deptno": 88
+    },
+    {
+      "eno": 5,
+      "ename": "Srini",
+      "job": "Hyd",
+      "salary": 38474,
+      "deptno": 22
+    }
+  ]
+}

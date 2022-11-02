@@ -1,0 +1,12 @@
+{
+    "Emps" :[
+        
+        {"eid":10,"ename":"Stefan","job":"Manager","salary":100000,"deptno":123},
+        {"eid":20,"ename":"Damon","job":"Painter","salary":100000,"deptno":123},
+        {"eid":30,"ename":"Caroline","job":"CEO","salary":100000,"deptno":123},
+        {"eid":10,"ename":"Stefan","job":"Manager","salary":100000,"deptno":123},
+        {"eid":20,"ename":"Damon","job":"Painter","salary":100000,"deptno":123},
+        {"eid":30,"ename":"Caroline","job":"CEO","salary":100000,"deptno":123}
+        
+    ]
+}
