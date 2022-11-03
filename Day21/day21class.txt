@@ -1,0 +1,35 @@
+Features:
+1.Component based
+2.Declarative programming
+3.JSX(Javascript+XML)
+4.Virtual DOM
+5.Increase performance
+6.Redux Library
+7.Routing
+
+
+
+PROJECT CREATION:
+1. create-react-app project 
+2. cd my-project 
+3. npm start
+
+
+JSX in ReactJS
+return(
+    <React.Fragment>
+        <p>Hello World</p>
+        <p>Hello World</p>
+     </React.Fragment>);
+)
+
+<h1> {uname} </h1>
+<h1> Welcome to {uname} </h1>
+<span> {10+20} </span>
+<h1>{n%2==0 ? 'Even':'Odd'}</h1>
+{//comment line}
+<p>{sum(10,20)}</p>
+<img src={filename}/>
+<p className="c1">hello world</p>
+
+
