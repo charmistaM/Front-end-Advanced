@@ -1,0 +1,9 @@
+What Is ‘State’ in ReactJS?
+The state is a built-in React object that is used to contain data or information about the component. A component’s state can change over time; whenever it changes, the component re-renders.
+---> State is used to store the data of the components that have to be rendered to the view
+---> State holds the data and can change over time
+---> State can only be used in class components
+---> Event handlers generally update state
+
+
+
